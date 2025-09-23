@@ -61,14 +61,14 @@ public class Dono extends Pessoa{
     }
 
     //Senha
-    private int getSenha() {
+    public int getSenha() {
         return senha;
     }
     private void setSenha(int senha) {
         this.senha = senha;
     }
 
-    //Restaurante 
+    //Restaurante  
     public String getRestaurante() {
         return restaurante;
     }
