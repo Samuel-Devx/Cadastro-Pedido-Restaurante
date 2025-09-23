@@ -6,23 +6,37 @@ public class Cardápio extends Dono{
     }
 
 
-    private ArrayList<String> cardapio = new ArrayList <> ();
+    private ArrayList<Produto> cardapio = new ArrayList <> ();
     
 
     public void adicionarCardapio (String produto, int senhaDono, double preço) {
         if (senhaDono == getSenha() ){
-        cardapio.add(produto + " - R$" + preço);
+            Produto p = new Produto (produto, preço);
+        cardapio.add(p);
         System.out.println(String.format("O profuto %s foi adicionado.", produto));
     }
-        else{
+        else{   
             System.out.println("Senha incorreta!");
         }
 
     }
+        public void removerCardapio(String produto, int senhaDono) {
+        if (senhaDono == getSenha()) {
+            Produto p = new Produto(produto, 0); // preço não importa para remover
+            if (cardapio.remove(p)) {
+                System.out.println("O produto " + produto + " foi removido");
+            } else {
+                System.out.println("Produto não cadastrado.");
+            }
+        } else {
+            System.out.println("Senha incorreta!");
+        }
+    }
+    
     public void mostrarCardapio () {
         System.out.println("======= Cardápio " + getRestaurante() + " =============");
-        for (String p : cardapio) {
-            System.out.println(" > "+p);
+        for (Produto p : cardapio) {
+            System.out.println(" > "+ p);
         }
     }
 
