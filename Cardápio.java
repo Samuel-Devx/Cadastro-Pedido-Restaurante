@@ -15,7 +15,7 @@ import java.util.ArrayList;
             if (senhaDono == getSenha() ){
                 Produto p = new Produto (produto, preço);
                 cardapio.add(p);
-                System.out.println(String.format("O profuto %s foi adicionado.", produto));}
+                System.out.println(String.format("O produto %s foi adicionado.", produto));}
             else{   
                 System.out.println("Senha incorreta!");}} 
 
