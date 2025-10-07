@@ -22,17 +22,18 @@ import java.util.ArrayList;
 
          //Uma função para remover um novo produto dentro do cardápio
         public void removerCardapio(String produto, int senhaDono) {
-            if (senhaDono == getSenha()) {
-                Produto p = new Produto(produto, 0); // preço não importa para remover
-            if (cardapio.remove(p)) {
+        
+            if (cardapio.contains(produto) && senhaDono == getSenha() ) {
+                cardapio.remove(produto);
                 System.out.println("O produto " + produto + " foi removido");
             } else {
-                System.out.println("Produto não cadastrado.");
+                System.out.println("Produto não cadastrado ou senha incorreta.");
             }
-            } else {
-                System.out.println("Senha incorreta!");
-            }
-        }
+            
+            
+    };
+
+        
         //Uma função para mostrar os produtos dentro do cardápio usando um for
         public void mostrarCardapio () {
             System.out.println("======= Cardápio " + getRestaurante() + " =============");
